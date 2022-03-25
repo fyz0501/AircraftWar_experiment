@@ -65,9 +65,11 @@ class HeroAircraft {
     - int shootNum
     - int power
     - int direction
+    - int maxHp
     + HeroAircraft(int locationX, int locationY, int speedX, int speedY, int hp):void
     + forward():void
     + shoot():List<Bullet>
+    + increaseHp(int increase):void
 }
 
 class MobEnemy {
@@ -87,21 +89,26 @@ class EnemyBullet {
 }
 
 class BombProps{
-
+    +BombProps(int locationX, int locationY, int speedX, int speedY):void
 }
 
 class FirePowerProps{
-
+    + FirePowerProps(int locationX, int locationY, int speedX, int speedY):void
 }
 
 class CureProps{
-
+    - int increaseHp;
+    + CureProps(int locationX, int locationY, int speedX, int speedY):void
 }
 
 
 class EliteEnemyAircraft{
+    - int power
+    - int direction
+    - int shootNum
     + MobEnemy(int locationX, int locationY, int speedX, int speedY, int hp):void
     + forward():void
+    + shoot():List<Bullet>
 }
 
 'class EnemyAircraftNormal{

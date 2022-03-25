@@ -217,6 +217,7 @@ public class Game extends JPanel {
                 bullet.vanish();
             }
         }
+
         // 英雄子弹攻击敌机
         for (AbstractBullet bullet : heroBullets) {
             if (bullet.notValid()) {
@@ -286,13 +287,7 @@ public class Game extends JPanel {
             if(props.crash((heroAircraft))||heroAircraft.crash(props)){
                 props.vanish();
                 if(props.getClass() == CureProps.class){
-                    //判断当前飞机血量，防止飞机血量溢出
-                    if(heroAircraft.getHp()<=70){
-                        heroAircraft.decreaseHp(-30);
-                    }
-                    else{
-                        heroAircraft.decreaseHp(-100+heroAircraft.getHp());
-                    }
+                    heroAircraft.increaseHp(CureProps.increaseHp);
                 }
                 else if(props.getClass() == FirePowerProps.class){
                     System.out.println("FireSupply active!\n");

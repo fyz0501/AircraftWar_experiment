@@ -19,7 +19,6 @@ public class HeroController {
     public HeroController(Game game, HeroAircraft heroAircraft){
         this.game = game;
         this.heroAircraft = heroAircraft;
-
         mouseAdapter = new MouseAdapter() {
             @Override
             public void mouseDragged(MouseEvent e) {

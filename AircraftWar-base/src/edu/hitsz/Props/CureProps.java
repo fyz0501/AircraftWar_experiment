@@ -10,18 +10,11 @@ import edu.hitsz.basic.FlyingObject;
 
 
 public class CureProps extends FlyingObject {
+
+    public static int increaseHp = 30;
+
     //Constructor
     public CureProps(int locationX, int locationY, int speedX, int speedY) {
         super(locationX, locationY, speedX, speedY);
-        speedX = 0;
     }
-    //Moving Method
-//    @Override
-//    public void forward(){
-//        locationY += speedY;
-//        // 判定 y 轴向下飞行出界
-//        if (locationY >= Main.WINDOW_HEIGHT ) {
-//            vanish();
-//        }
-//    }
 }

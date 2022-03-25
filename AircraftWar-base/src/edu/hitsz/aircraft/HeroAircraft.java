@@ -16,6 +16,7 @@ public class HeroAircraft extends AbstractAircraft {
     private int shootNum = 1;     //子弹一次发射数量
     private int power = 30;       //子弹伤害
     private int direction = -1;  //子弹射击方向 (向上发射：1，向下发射：-1)
+    private int maxHp = 100;
 
     /**
      * @param locationX 英雄机位置x坐标
@@ -26,6 +27,10 @@ public class HeroAircraft extends AbstractAircraft {
      */
     public HeroAircraft(int locationX, int locationY, int speedX, int speedY, int hp) {
         super(locationX, locationY, speedX, speedY, hp);
+    }
+
+    public void increaseHp(int increase){
+        hp = Math.min(getHp()+30,maxHp);
     }
 
     @Override
